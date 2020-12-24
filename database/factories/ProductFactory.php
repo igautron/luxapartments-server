@@ -39,28 +39,30 @@ class ProductFactory extends Factory
 //			'kit',//'Набір',
 //			'veil',//'Гель-вуаль',
 //		];
-//
-//		$brands_arr = [
-//			'farmavita',
-//			'davines',
-//			'joico',
-//			'profistyle',
-//			'felps',
-//			'schwarzkopf',
-//			'mirella',
-//			'altrego'
-//		];
 
+		$areas_arr = [
+			'Center area',
+			'Arkadia',
+			'Nemo',
+			'Other area',
+		];
 
+		$categories_arr = [
+			'Studio apartments',
+			'One-room apartments',
+			'Two-room apartments',
+			'Three room apartments',
+		];
 
 		return [
             'image' => '//lorempixel.com/500/600/fashion/?t='.microtime(),
-			'title' => $this->faker->paragraph(5),
+			'title' => $this->faker->city,
             'city' => $this->faker->city,
-            'meters' => $this->faker->postcode,
-			'category' => $this->faker->paragraph(5),
+            'area' => $areas_arr[random_int(0, count($areas_arr)-1)], // случайный элемент из $serias_arr,
+            'meters' => random_int(20, 80),
+			'category' => $categories_arr[random_int(0, count($categories_arr)-1)], // случайный элемент из $serias_arr,
 			'descr' => $this->faker->paragraph(5),
-			'price' => $this->faker->postcode,
+			'price' => random_int(100, 1000),
 		];
 	}
 }
