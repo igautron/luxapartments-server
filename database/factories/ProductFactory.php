@@ -55,7 +55,7 @@ class ProductFactory extends Factory
 		];
 
 		return [
-            'image' => '//lorempixel.com/500/600/fashion/?t='.microtime(),
+            'images' => '//lorempixel.com/500/600/fashion/?t='.microtime(),
 			'title' => $this->faker->city,
             'city' => $this->faker->city,
             'area' => $areas_arr[random_int(0, count($areas_arr)-1)], // случайный элемент из $serias_arr,

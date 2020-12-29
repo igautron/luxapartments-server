@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         return [
             'status' => 'ok',
-            'products' => Product::all(),
+            'products' => Product::limit(6)->get(),
         ];
     }
 
@@ -44,8 +44,8 @@ class ProductController extends Controller
             });
         }
 
-        $products = $product->offset(0)->limit(30)->get();
-        
+        $products = $product->limit(6)->get();
+
         return [
             'status' => 'ok',
             'filter_values' => $filter_values,
@@ -82,7 +82,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return [
+            'status' => 'ok',
+            'product' => Product::find($id),
+        ];
     }
 
     /**

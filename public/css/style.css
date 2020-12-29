@@ -1,0 +1,37 @@
+.mini-cards{
+	margin-top: 10px;
+}
+.mini-card{
+    width: 15.6666%;
+    text-align: center;
+    padding: 5px;
+    margin: 0.5%;
+    border: 1px solid #ccc;
+    position: relative;
+    background: #3a3631;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+.mini-card img{
+	max-width: 100%;
+	max-height: 140px;
+}
+.mini-card .caption{
+    word-break: break-word;
+}
+.mini-card .delete-btn{
+    color: red;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 30px;
+    line-height: 30px;
+    transition: all .5s;
+}
+.mini-card .delete-btn:hover{
+	background: red;
+	color: white;
+	text-decoration: none;
+}

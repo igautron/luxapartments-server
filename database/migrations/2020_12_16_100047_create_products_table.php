@@ -15,8 +15,8 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
             $table->text('title')->nullable();
+            $table->text('images')->nullable();
             $table->text('city')->nullable();
             $table->text('area')->nullable();
             $table->text('meters')->nullable();
@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->text('category')->nullable();
             $table->text('descr')->nullable();
             $table->decimal('price', 8, 2)->nullable();
-            $table->decimal('stage', 8, 2)->nullable();
+            $table->integer('stage')->nullable();
             $table->timestamps();
         });
     }
