@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->text('category')->nullable();
             $table->text('descr')->nullable();
             $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('price2', 8, 2)->nullable();
             $table->decimal('stage', 8, 2)->nullable();
             $table->timestamps();
         });
