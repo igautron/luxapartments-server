@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -17,7 +16,7 @@ class ProductController extends Controller
     {
         return [
             'status' => 'ok',
-            'products' => Product::all(),
+            'products' => Product::limit(300)->get(),
         ];
     }
 
@@ -45,8 +44,8 @@ class ProductController extends Controller
             });
         }
 
-        $products = $product->offset(0)->limit(30)->get();
-        
+        $products = $product->limit(300)->get();
+
         return [
             'status' => 'ok',
             'filter_values' => $filter_values,
@@ -83,7 +82,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return [
+            'status' => 'ok',
+            'product' => Product::find($id),
+        ];
     }
 
     /**
